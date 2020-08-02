@@ -1,0 +1,14 @@
+clc;
+clear all;
+close all;
+s = tf('s');
+tf=zpk([],[0 -1 -2],[1]);
+t = 0:0.01:4;
+u1 = 2*sin(2*t);
+u2 = 2*sin(10*t);
+subplot(2,1,1);
+lsim(tf,u1,t,'g');
+title('p1');
+subplot(2,1,2);
+lsim(tf,u2,t,'r');
+title('p2');
